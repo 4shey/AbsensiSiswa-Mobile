@@ -49,7 +49,7 @@ object AuthRepository {
                 username = userObj.getString("username"),
                 role = userObj.getString("role"),
                 fullName = userObj.getString("fullName"),
-                referenceID = userObj.getInt("referenceID")
+                referenceID = userObj.getInt("referenceID"),
             )
         )
     }

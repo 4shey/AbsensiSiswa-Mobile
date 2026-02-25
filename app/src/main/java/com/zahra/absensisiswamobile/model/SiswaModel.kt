@@ -1,5 +1,7 @@
 package com.zahra.absensisiswa.model
 
+import android.os.Message
+
 data class SiswaModel(
     val userID: Int,
     val nis: String,

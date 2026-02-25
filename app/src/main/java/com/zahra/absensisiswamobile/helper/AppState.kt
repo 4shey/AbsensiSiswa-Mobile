@@ -11,5 +11,5 @@ enum class Screen {
 }
 
 object AppState {
-    val currentScreen: MutableState<Screen> = mutableStateOf(Screen.HOME)
+    val currentScreen: MutableState<Screen> = mutableStateOf(Screen.LOGIN)
 }

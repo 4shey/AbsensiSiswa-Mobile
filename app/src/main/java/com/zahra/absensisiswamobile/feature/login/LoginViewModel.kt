@@ -32,7 +32,7 @@ object LoginViewModel : ViewModel() {
         password = newPassword
     }
 
-    fun login() {
+    fun login(onError: (String) -> Unit) {
         viewModelScope.launch {
             isLoading = true
             errorMessage = null
@@ -41,10 +41,10 @@ object LoginViewModel : ViewModel() {
                 val result = AuthRepository.loginSiswa(nis, password)
 
                 if (result != null && result.success) {
-                    // pindah ke home
                     AppState.currentScreen.value = Screen.HOME
                 } else {
                     errorMessage = "Login gagal"
+                    onError("Login gagal, pastikan nis dan password anda benar")
                 }
 
             } catch (e: Exception) {
