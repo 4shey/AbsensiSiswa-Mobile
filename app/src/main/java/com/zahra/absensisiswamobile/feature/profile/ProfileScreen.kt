@@ -64,26 +64,56 @@ fun ProfileScreen(viewModel: ProfileViewModel) {
             }
         },
         bottomBar = {
-            NavigationBar(containerColor = Color.White) {
+            NavigationBar(
+                containerColor = Color.White
+            ) {
+
                 NavigationBarItem(
                     selected = AppState.currentScreen.value == Screen.HOME,
                     onClick = { AppState.currentScreen.value = Screen.HOME },
-                    icon = { Icon(Icons.Default.Home, null) },
-                    label = { Text("Home", fontWeight = FontWeight.Bold) }
+                    icon = {
+                        Icon(Icons.Default.Home, contentDescription = "Home")
+                    },
+                    label = { Text("Home", fontWeight = FontWeight.Bold) },
+                    colors = NavigationBarItemDefaults.colors(
+                        selectedIconColor = Color.White,
+                        selectedTextColor = AppBlue,
+                        indicatorColor = AppBlue,
+                        unselectedIconColor = Color.Gray,
+                        unselectedTextColor = Color.Gray
+                    )
                 )
 
                 NavigationBarItem(
                     selected = AppState.currentScreen.value == Screen.PROFILE,
-                    onClick = { },
-                    icon = { Icon(Icons.Default.Person, null) },
-                    label = { Text("Profile", fontWeight = FontWeight.Bold) }
+                    onClick = { AppState.currentScreen.value = Screen.PROFILE },
+                    icon = {
+                        Icon(Icons.Default.Person, contentDescription = "Profile")
+                    },
+                    label = { Text("Profile", fontWeight = FontWeight.Bold) },
+                    colors = NavigationBarItemDefaults.colors(
+                        selectedIconColor = Color.White,
+                        selectedTextColor = AppBlue,
+                        indicatorColor = AppBlue,
+                        unselectedIconColor = Color.Gray,
+                        unselectedTextColor = Color.Gray
+                    )
                 )
 
                 NavigationBarItem(
                     selected = AppState.currentScreen.value == Screen.RIWAYAT,
                     onClick = { AppState.currentScreen.value = Screen.RIWAYAT },
-                    icon = { Icon(Icons.Default.DateRange, null) },
-                    label = { Text("Riwayat", fontWeight = FontWeight.Bold) }
+                    icon = {
+                        Icon(Icons.Default.DateRange, contentDescription = "Riwayat")
+                    },
+                    label = { Text("Riwayat", fontWeight = FontWeight.Bold) },
+                    colors = NavigationBarItemDefaults.colors(
+                        selectedIconColor = Color.White,
+                        selectedTextColor = AppBlue,
+                        indicatorColor = AppBlue,
+                        unselectedIconColor = Color.Gray,
+                        unselectedTextColor = Color.Gray
+                    )
                 )
             }
         }
